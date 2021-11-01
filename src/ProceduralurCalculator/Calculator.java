@@ -26,10 +26,10 @@ public class Calculator {
 
             // Cases relate to binary operations (add, subtract, divide, multiply)
             switch (op) {
-                case 1 -> System.out.println(toBinary(Add(binaryToDecimal(num1), binaryToDecimal(num2))));
-                case 2 -> System.out.println(toBinary(Subtract(binaryToDecimal(num1), binaryToDecimal(num2))));
-                case 3 -> System.out.println(toBinary(Division(binaryToDecimal(num1), binaryToDecimal(num2))));
-                case 4 -> System.out.println(toBinary(Multiply(binaryToDecimal(num1), binaryToDecimal(num2))));
+                case 1 -> System.out.println("Output: " + toBinary(Add(binaryToDecimal(num1), binaryToDecimal(num2))));
+                case 2 -> System.out.println("Output: " + toBinary(Subtract(binaryToDecimal(num1), binaryToDecimal(num2))));
+                case 3 -> System.out.println("Output: " + toBinary(Division(binaryToDecimal(num1), binaryToDecimal(num2))));
+                case 4 -> System.out.println("Output: " + toBinary(Multiply(binaryToDecimal(num1), binaryToDecimal(num2))));
                 default -> System.out.println("Oops! Didn't pick an operation.");
             }
         } else if (calc == 2) {
@@ -43,10 +43,10 @@ public class Calculator {
 
             // Cases relate to hex operations (add, subtract, divide, multiply)
             switch (op) {
-                case 1 -> System.out.println(toHex(Add(binaryToDecimal(num1), binaryToDecimal(num2))));
-                case 2 -> System.out.println(toHex(Subtract(binaryToDecimal(num1), binaryToDecimal(num2))));
-                case 3 -> System.out.println(toHex(Division(binaryToDecimal(num1), binaryToDecimal(num2))));
-                case 4 -> System.out.println(toHex(Multiply(binaryToDecimal(num1), binaryToDecimal(num2))));
+                case 1 -> System.out.println("Output: " + toHex(Add(hexToDecimal(num1), hexToDecimal(num2))));
+                case 2 -> System.out.println("Output: " + toHex(Subtract(hexToDecimal(num1), hexToDecimal(num2))));
+                case 3 -> System.out.println("Output: " + toHex(Division(hexToDecimal(num1), hexToDecimal(num2))));
+                case 4 -> System.out.println("Output: " + toHex(Multiply(hexToDecimal(num1), hexToDecimal(num2))));
                 default -> System.out.println("Oops! Didn't pick an operation.");
             }
         } else {
@@ -56,21 +56,22 @@ public class Calculator {
 
             if (conType == 1 || conType == 3) {
                 System.out.println("Enter value to be converted:");
-                int value = scn.nextInt();
+                String idk = scn.nextLine();
+                String value = scn.nextLine();
 
                 // Converts decimal values to hex/binary
                 switch (conType) {
-                    case 1 -> System.out.println(toBinary(value));
-                    case 3 -> System.out.println(toHex(value));
+                    case 1 -> System.out.println("Output: " + binaryToDecimal(value));
+                    case 3 -> System.out.println("Output: " + hexToDecimal(value));
                 }
             } else {
                 System.out.println("Enter value to be converted:");
-                String value = scn.nextLine();
+                int value = scn.nextInt();
 
                 // Converts hex/binary values into decimal values
                 switch (conType) {
-                    case 2 -> System.out.println(binaryToDecimal(value));
-                    case 4 -> System.out.println(hexToDecimal(value));
+                    case 2 -> System.out.println("Output: " + toBinary(value));
+                    case 4 -> System.out.println("Output: " + toHex(value));
                 }
             }
         }
